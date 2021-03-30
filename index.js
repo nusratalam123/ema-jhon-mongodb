@@ -12,7 +12,9 @@ app.use(cors());
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.3fzj7.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const port = 5000
 
-
+app.get('/', (req, res) => {
+  res.send("hello from heroku its working well")
+})
 
 //const password="emaWatson123"
 
