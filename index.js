@@ -63,7 +63,7 @@ app.post('/productByKey',(req, res) => {
 app.post('/addOrder',(req, res) => {
 
   const order=req.body;
-  ordersCollection.insertOne(order)
+  ordersCollection.insertOnehero(order)
   .then(result => {
     console.log(result.insertedCount);
     res.send(result.insertedCount>0)
@@ -78,4 +78,4 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port)
+app.listen(process.env.PORT||port)
